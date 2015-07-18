@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>New Fresh Tomatoes</title>
+    <link href='http://fonts.googleapis.com/css?family=Crushed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script id="angularScript" src="./angular.min.js"></script>
+    <script id="angularRouteScript" src="./angular-route.js"></script>
+    <script id="angularSanitizeScript" src="./angular-sanitize.js"></script>
+    <script id="appScript" src="./app.js"></script>
+</head>
+<body ng-controller="myController" ng-init="workers.init()">
+    <div class="top">
+        <i class="fa fa-leaf fa-flip-horizontal"></i>
+        <span><strong>Welcome to Fresh Tomatoes!</strong></span>
+        <i class="fa fa-leaf"></i>
+    </div>
+    <i class="fa fa-spinner fa-pulse loading" ng-show="data.loading == true"></i>
+    <strong class="title"><i class="fa fa-leaf fa-flip-horizontal"></i> Featured films <i class="fa fa-leaf"></i></strong>
+    <div id="featured_container">
+        <div class="featured_item" ng-repeat="film in data.featured" ng-click="workers.featuredClick(film)">
+            <p><strong>{{film.title}}</strong></p>
+            <img class="featured_image" ng-src="{{film.poster_image_url}}" width="140" height="180">
+        </div>
+    </div>
+    <div id="lists_container">
+        <strong class="title"><i class="fa fa-leaf fa-flip-horizontal"></i> Full film lists <i class="fa fa-leaf"></i></strong>
+        <div ng-repeat="name in data.listNames">
+            <p class="list_button" ng-click="workers.list(name)">{{name}}</p>
+        </div>
+    </div>
+    <div id="selectedFeature" ng-show="data.selected == 'featured'">
+        <div class="exit_button" ng-click="workers.exitFeatured()">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-1x exit_back"></i>
+                <i class="fa fa-times-circle-o fa-stack-1x"></i>
+            </span>
+        </div>
+        <h2>{{data.featureSelected.title}}</h2>
+        <span ng-bind-html="data.featureSelected.trailer_youtube_url"></span>
+        <img class="featured_selected_image" ng-src="{{data.featureSelected.poster_image_url}}">
+    </div>
+    <div id="selectedList" ng-show="data.selected == 'list'">
+        <div class="list_exit_button">
+            <span class="fa-stack" ng-click="workers.exitList()">
+                <i class="fa fa-circle fa-stack-1x list_exit_back"></i>
+                <i class="fa fa-times-circle-o fa-stack-1x"></i>
+            </span>
+        </div>
+        <h1>{{data.listSelected[0]}}</h1>
+        <div class="list_item" ng-repeat="item in data.listSelected[2]" ng-click="workers.listItemClick(item)">
+            {{item.value}}
+        </div>
+    </div>
+    <div id="selectedFilm" ng-show="data.selected == 'item'">
+        <div class="item_exit_button">
+            <span class="fa-stack" ng-click="workers.exitItem()">
+                <i class="fa fa-circle fa-stack-1x list_exit_back"></i>
+                <i class="fa fa-times-circle-o fa-stack-1x"></i>
+            </span>
+        </div>
+        <h1>{{data.itemSelected[3]}}</h1>
+        <span ng-bind-html="data.itemSelected[5]" ng-show="data.loading == false"></span>
+        <img class="item_selected_image" ng-src="{{data.itemSelected[4]}}" ng-show="data.loading == false">
+    </div>
+</body>
+</html>

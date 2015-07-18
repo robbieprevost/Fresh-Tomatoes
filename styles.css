@@ -1,0 +1,200 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Crushed', cursive;
+    text-align: center;
+    background-color: crimson;
+    color: beige;
+    word-break: break-all;
+    font-size: 24px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.top {
+    font-size: 1.5em;
+    text-shadow: 0 3px black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    background-color: darkgreen;
+    text-align: center;
+    color: beige;
+    line-height: 2.75em;
+    box-shadow: 0 10px 10px #000000;
+}
+
+.list_button {
+    width: 8%;
+    margin: 1%;
+    line-height: 2.75em;
+    height: 50px;
+    float: left;
+    text-align: center;
+    font-family: 'Crushed', cursive;
+    font-size: .8em;
+    color: beige;
+    background-color: darkgreen;
+    border-radius: 10%;
+    box-shadow: 0 5px 10px #000000;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 1.25em;
+    line-height: 2.5em;
+    margin: 10px;
+    padding: 10px;
+    text-shadow: 0 3px black;
+}
+
+#featured_container {
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.featured_item {
+    margin: 0 1%;
+    width: 18%;
+    height: 250px;
+    background-color: darkgreen;
+    float: left;
+    color: beige;
+    font-size: .75em;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px #000000;
+    border-color: beige;
+    position: relative;
+}
+
+#lists_container {
+    width: 80%;
+    margin: 0 10%;
+    float: left;
+}
+
+.featured_image {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 70%;
+    height: 60%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: beige;
+}
+
+.loading {
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    z-index: 5;
+    font-size: 5em;
+}
+
+#selectedFeature, #selectedList, #selectedFilm {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 89%;
+    height: 89%;
+    background-color: black;
+    color: beige;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: beige;
+}
+
+#selectedList {
+    overflow: auto;
+}
+
+.featured_selected_image, .item_selected_image {
+    width: 25%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+.exit_button, .list_exit_button, .item_exit_button {
+    position: fixed;
+    top: -2%;
+    right: 2%;
+    font-size: 1.5em;
+    color: beige;
+    text-shadow: 0 2px #000000;
+    line-height: .1em;
+    z-index: 5;
+}
+
+.exit_back, .list_exit_back {
+    color: crimson;
+}
+
+.trailer {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+}
+
+.list_item {
+    width: 80%;
+    height: 100px;
+    background-color: darkgreen;
+    text-align: center;
+    color: beige;
+    font-size: 2em;
+    text-shadow: 0 3px crimson;
+    line-height: 2em;
+    margin: 10px 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px beige inset;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .top {
+        font-size: 1.4em;
+        line-height: 4.5em;
+    }
+
+    .list_button {
+        font-size: 1.1em;
+    }
+    #featured_container {
+        width: 100%;
+        clear: both;
+    }
+    .featured_item {
+        width: 32%;
+        margin: 1% auto 1% 1%;
+        font-size: 1.2em;
+    }
+
+    .exit_button, .list_exit_button, .item_exit_button {
+        position: fixed;
+        top: -1.5%;
+        right: -2%;
+        font-size: 2em;
+        color: beige;
+        text-shadow: 0 2px #000000;
+    }
+}
